@@ -10,6 +10,11 @@ class Bank:
         self.accountsDict = {}
         self.nextAccountNumber = 0
 
+    # def createAccount(self, theName, theStartingAmount, thePassword):
+    #     oAccount = Account(theName, theStartingAmount, thePassword)
+    #     newAccountNumber = self.nextAccountNumber
+    #     self.nextAccountNumbher = 0
+
     def createAccount(self, theName, theStartingAmount, thePassword):
         oAccount = Account(theName, theStartingAmount, thePassword)
         newAccountNumber = self.nextAccountNumber
@@ -72,20 +77,20 @@ class Bank:
 
     def show(self):
         print("*** Show ***")
-        for userAccountNumberin self.accountsDict:
+        for userAccountNumber in self.accountsDict:
             oAccount = self.accountsDict[userAccountNumber]
-            print('     Account:', userAccountNumber)
+            print("     Account:", userAccountNumber)
             oAccount.show()
 
     def withdraw(self):
         print("*** Withdraw ***")
-        userAccountNumber =  input('Please enter your account number: ')
+        userAccountNumber = input("Please enter your account number: ")
         userAccountNumber = int(userAccountNumber)
-        userAmount = input('Please enter the amount to withdraw')
+        userAmount = input("Please enter the amount to withdraw")
         userAmount = int(userAmount)
-        userAccountPassword = input('Please enter the password: ')
+        userAccountPassword = input("Please enter the password: ")
         oAccount = self.accountsDict[userAccountNumber]
         theBalance = oAccount.withdraw(userAmount, userAccountPassword)
         if theBalance is not None:
-            print('Withdrew: ', userAmount)
-            print('Your new balance is: ', theBalance)
+            print("Withdrew: ", userAmount)
+            print("Your new balance is: ", theBalance)
