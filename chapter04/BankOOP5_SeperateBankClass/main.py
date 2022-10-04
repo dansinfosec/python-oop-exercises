@@ -37,7 +37,7 @@ while True:
         oBank.closeAccount()
 
     elif action == "d":
-        oBank.depoist()
+        oBank.deposit()
 
     elif action == "o":
         oBank.openAccount()
